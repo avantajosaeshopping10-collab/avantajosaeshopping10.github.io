@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja A Vantajosa e Shopping 10</title>
-    <meta name="google-site-verification" content="sZwO9KlfwsmDUlW3DvgaL6i3ak6SDfLgMnWPnnk7CFg" />
+    <title>Loja A Vantajosa & Shopping 10</title>
     <style>
+        :root {
+            --cor-principal: #FFD700; /* Amarelo da Logo */
+            --cor-escura: #111111;    /* Preto */
+            --cor-clara: #FFFFFF;     /* Branco */
+        }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Arial Black', Gadget, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #FFDE00; /* Fundo Amarelo */
-            color: #000000;
+            background-color: var(--cor-principal);
+            color: var(--cor-escura);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,156 +29,192 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 30px 20px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 2px solid #000000;
-            max-width: 450px;
+            background-color: var(--cor-clara);
+            max-width: 500px;
             width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 4px solid var(--cor-escura);
         }
 
-        /* Letra Preta com Borda Branca */
+        .logo-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--cor-principal);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+
         h1 {
-            font-size: 2.2rem;
-            color: #000000;
-            text-shadow: 
-                -2px -2px 0 #FFFFFF,  
-                 2px -2px 0 #FFFFFF,
-                -2px  2px 0 #FFFFFF,
-                 2px  2px 0 #FFFFFF;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            color: #000000;
-            text-shadow: 
-                -1px -1px 0 #FFFFFF,  
-                 1px -1px 0 #FFFFFF,
-                -1px  1px 0 #FFFFFF,
-                 1px  1px 0 #FFFFFF;
-            margin-top: 25px;
-            margin-bottom: 15px;
+            font-size: 26px;
             text-transform: uppercase;
+            color: var(--cor-escura);
+            margin-bottom: 5px;
+            font-weight: 900;
         }
 
-        .sub-titulo {
-            font-size: 1.1rem;
-            font-weight: bold;
+        .subtitle {
+            font-size: 14px;
+            color: #555;
             margin-bottom: 25px;
-            background: #000000;
-            color: #FFDE00;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
+            font-style: italic;
+            font-weight: 600;
         }
 
-        /* Departamentos */
-        .departamentos {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .dep-item {
-            background: #FFFFFF;
-            color: #000000;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border: 1px solid #000000;
-            box-shadow: 2px 2px 0px #000000;
-        }
-
-        /* Blocos Pretos de Informações */
-        .info-bloco {
-            background: #000000;
-            color: #FFFFFF;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            font-family: Arial, sans-serif;
-            border: 1px solid #FFFFFF;
-        }
-
-        .info-bloco strong {
-            color: #FFDE00;
-            font-family: 'Arial Black', sans-serif;
-        }
-
-        /* Botões */
-        .btn-link {
-            display: block;
-            background-color: #000000;
-            color: #FFFFFF;
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--cor-escura);
+            color: var(--cor-clara);
             text-decoration: none;
-            padding: 14px;
-            border-radius: 30px;
-            font-size: 1rem;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
             font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.2s, background-color 0.2s;
+            border: 3px solid var(--cor-escura); /* Borda marcante */
+        }
+
+        .link-button:hover {
+            transform: scale(1.03);
+            background-color: var(--cor-principal);
+            color: var(--cor-escura);
+        }
+
+        /* Seção da Vitrine de Fotos */
+        .vitrine-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .vitrine-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 16px;
             margin-bottom: 12px;
-            transition: transform 0.2s;
-            border: 2px solid #FFFFFF;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            color: var(--cor-escura);
+            border-left: 5px solid var(--cor-principal);
+            padding-left: 8px;
         }
 
-        .btn-link:active {
-            transform: scale(0.98);
+        .vitrine-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: #FFFFFF;
-            border: 2px solid #FFFFFF;
+        .vitrine-item {
+            background-color: #f5f5f5;
+            border: 2px solid var(--cor-escura);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .vitrine-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .vitrine-label {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px;
+            background-color: var(--cor-escura);
+            color: var(--cor-clara);
+        }
+
+        .info-box {
+            background-color: #fffbeb;
+            border: 2px dashed var(--cor-escura);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 35px;
+            font-size: 13px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .info-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+            color: var(--cor-escura);
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Loja A Vantajosa<br>& Shopping 10</h1>
         
-        <span class="sub-titulo">A Loja da Família Inteligente</span>
-
-        <h2>O que oferecemos:</h2>
-        <div class="departamentos">
-            <div class="dep-item">👕 Masculino</div>
-            <div class="dep-item">👗 Feminino</div>
-            <div class="dep-item">👶 Infantil</div>
-            <div class="dep-item">👜 Acessórios</div>
-            <div class="dep-item">💄 Maquiagens</div>
-            <div class="dep-item">🧴 Cosméticos</div>
+        <!-- Área da Logo Redonda -->
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="Logo Loja A Vantajosa e Shopping 10" class="logo-img" onerror="this.src='https://placehold.co'">
         </div>
 
-        <h2>Horário de Atendimento:</h2>
-        <div class="info-bloco">
-            Segunda à Sábado<br>
-            <strong>das 07h00 às 17h30</strong>
-        </div>
+        <h1>A Vantajosa & Shopping 10</h1>
+        <p class="subtitle">Moda da Família Inteligente e Preço Único!</p>
 
-        <h2>Onde Estamos:</h2>
-        <div class="info-bloco">
-            📍 Avenida Castelo Branco, 1760<br>
-            <strong>Centro,Senador Giomard - Ac</strong>
-        </div>
-
-        <!-- Links de Contato Prontos -->
-        <a href="https://wa.me" target="_blank" class="btn-link btn-whatsapp">
-            💬 Fale no WhatsApp: (68) 99253-9780
+        <!-- Botões de Links Rápidos -->
+        <a href="https://wa.me" target="_blank" class="link-button">
+            🟢 Falar no WhatsApp
         </a>
-        
-        <a href="https://instagram.com" target="_blank" class="btn-link">
-            📸 Siga-nos @shopping10eavantajosa
+
+        <a href="https://instagram.com" target="_blank" class="link-button">
+            📸 Siga nosso Instagram
         </a>
+
+        <!-- Seção Vitrine de Fotos Semanais -->
+        <div class="vitrine-section">
+            <p class="vitrine-title">✨ Novidades da Semana</p>
+            <div class="vitrine-grid">
+                
+                <!-- Item 1 da Vitrine -->
+                <div class="vitrine-item">
+                    <img src="foto1.jpg" alt="Moda Masculina e Feminina" class="vitrine-img" onerror="this.src='https://placehold.co'">
+                    <div class="vitrine-label">Moda / Vitrine</div>
+                </div>
+
+                <!-- Item 2 da Vitrine -->
+                <div class="vitrine-item">
+                    <img src="foto2.jpg" alt="Maquiagens e Cosméticos" class="vitrine-img" onerror="this.src='https://placehold.co'">
+                    <div class="vitrine-label">Shopping 10</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bloco Informativo de Horários e Endereço -->
+        <div class="info-box">
+            <p class="info-title">📍 Nosso Endereço:</p>
+            <p>Avenida Castelo Branco, 1760, Centro<br>Senador Guiomard - Acre</p>
+            <br>
+            <p class="info-title">🕒 Horário de Atendimento:</p>
+            <p>Segunda a Sábado: 07h00 às 17h30</p>
+        </div>
+
+        <footer>
+            &copy; 2026 Loja A Vantajosa e Shopping 10. Todos os direitos reservados.
+        </footer>
     </div>
 
 </body>
 </html>
+
